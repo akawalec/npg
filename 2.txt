@@ -1,0 +1,56 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# importujemy funkcje z modu³u ocenyfun zapisanego w pliku ocenyfun.py
+from ocenyfun import drukuj, srednia, mediana, odchylenie
+
+
+def main(args):
+    przedmioty = set(['polski', 'angielski'])  # definicja zbioru
+    drukuj(przedmioty, "Lista przedmiotów zawiera: ")
+
+    print("\nAby przerwaæ wprowadzanie przedmiotów, naciœnij Enter.")
+    while True:
+        przedmiot = input("Podaj nazwê przedmiotu: ")
+        if len(przedmiot):
+            if przedmiot in przedmioty:  # czy przedmiot jest w zbiorze?
+                print("Ten przedmiot ju¿ mamy :-)")
+            przedmioty.add(przedmiot)  # dodaj przedmiot do zbioru
+        else:
+            drukuj(przedmioty, "\nTwoje przedmioty: ")
+            przedmiot = input("\nZ którego przedmiotu wprowadzisz oceny? ")
+            # je¿eli przedmiotu nie ma w zbiorze
+            if przedmiot not in przedmioty:
+                print("Brak takiego przedmiotu, mo¿esz go dodaæ.")
+            else:
+                break  # wyjœcie z pêtli
+
+    oceny = []  # pusta lista ocen
+    ocena = None  # zmienna steruj¹ca pêtl¹ i do pobierania ocen
+    print("\nAby przerwaæ wprowadzanie ocen, podaj 0 (zero).")
+
+    while not ocena:
+        try:
+            ocena = int(input("Podaj ocenê (1-6): "))
+            if (ocena > 0 and ocena < 7):
+                oceny.append(float(ocena))
+            elif ocena == 0:
+                break
+            else:
+                print("B³êdna ocena.")
+            ocena = None
+        except ValueError:
+            print("B³êdne dane!")
+
+    drukuj(oceny, przedmiot.capitalize() + " - wprowadzone oceny: ")
+    s = srednia(oceny)  # wywo³anie funkcji z modu³u ocenyfun
+    m = mediana(oceny)  # wywo³anie funkcji z modu³u ocenyfun
+    o = odchylenie(oceny, s)  # wywo³anie funkcji z modu³u ocenyfun
+    print("\nŒrednia: {0:5.2f}".format(s))
+    print("Mediana: {0:5.2f}\nOdchylenie: {1:5.2f}".format(m, o))
+    return 0
+
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv))
