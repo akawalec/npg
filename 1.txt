@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+cossssssssssssss
 import os  # modu³ udostêpniaj¹cy funkcjê isfile()
 
 slownik = {}  # pusty s³ownik
