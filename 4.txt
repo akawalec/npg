@@ -1,14 +1,14 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
+ddddd
 def fib_iter1(n):  # definicja funkcji
     """
-        Funkcja drukuje kolejne wyrazy ci¹gu Fibonacciego
-        a¿ do wyrazu n-tego, który zwraca.
-        Wersja iteracyjna z pêtl¹ while.
+        Funkcja drukuje kolejne wyrazy ciÅ¡gu Fibonacciego
+        aÅ¼ do wyrazu n-tego, ktÃ³ry zwraca.
+        Wersja iteracyjna z pÄ™tlÅ¡ while.
     """
-    pwyrazy = (0, 1)  # dwa pierwsze wyrazy ci¹gu zapisane w tupli
+    pwyrazy = (0, 1)  # dwa pierwsze wyrazy ciÅ¡gu zapisane w tupli
     a, b = pwyrazy  # przypisanie wielokrotne, rozpakowanie tupli
     print(a, end=" ")
     while n > 1:
@@ -19,9 +19,9 @@ def fib_iter1(n):  # definicja funkcji
 
 def fib_iter2(n):
     """
-        Funkcja drukuje kolejne wyrazy ci¹gu Fibonacciego
-        a¿ do wyrazu n-tego, który zwraca.
-        Wersja iteracyjna z pêtl¹ for.
+        Funkcja drukuje kolejne wyrazy ciÅ¡gu Fibonacciego
+        aÅ¼ do wyrazu n-tego, ktÃ³ry zwraca.
+        Wersja iteracyjna z pÄ™tlÅ¡ for.
     """
     a, b = 0, 1
     print("wyraz", 1, a)
@@ -31,13 +31,13 @@ def fib_iter2(n):
         a, b = b, a + b
         print("wyraz", i + 2, b)
 
-    print()  # wiersz odstêpu
+    print()  # wiersz odstÄ™pu
     return b
 
 
 def fib_rek(n):
     """
-        Funkcja zwraca n-ty wyraz ci¹gu Fibonacciego.
+        Funkcja zwraca n-ty wyraz ciÅ¡gu Fibonacciego.
         Wersja rekurencyjna.
     """
     if n < 1:
